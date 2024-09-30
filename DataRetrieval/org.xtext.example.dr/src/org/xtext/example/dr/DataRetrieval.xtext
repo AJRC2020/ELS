@@ -1,0 +1,98 @@
+grammar org.xtext.example.dr.DataRetrieval with org.eclipse.xtext.common.Terminals
+
+generate dataRetrieval "http://www.xtext.org/example/dr/DataRetrieval"
+
+// Main rule
+Retrieve:
+	'retrieve' dest=Dest (sourceFolder=SourceFolder)? '{' configList+=ConfigList+ opList+=OpList* '}'
+;
+
+// Sets the path where the retrieved data will be written
+Dest:
+	'destination=' name=STRING
+;
+
+// Can be used if there is an operation to be repeated for every directory inside a certain directory
+SourceFolder:
+	'folder=' name=STRING
+;
+
+// List of configurations for data extraction
+ConfigList:
+	'extraction' '{' source=Source (path=Path)? (keysToExtract=KeysToExtract)? (renameAll=RenameAll)? (filter=Filter threshold=Threshold)?'}'
+;
+
+// List of operations to perform on the table of extracted data
+OpList:
+	'operation' '{' opType=OpType '}'
+;
+
+// Sets the path where the data to retrieve is located
+Source:
+	'source=' name=STRING
+;
+
+// Sets the path of keys inside the file to get to the data to retrieve
+Path:
+	'path=' name=STRING
+;
+
+// Sets the list of keys to extract
+KeysToExtract:
+	{KeysToExtract} 'get=[' key1+=Key (',' key1+=Key)* ']' 
+;
+
+// Defines a key and its rename
+Key:
+	name=STRING ('->' rename=Rename)?
+;
+
+// Sets the type of rename
+Rename:
+	FullRename | AddPrefix | AddSuffix 
+;
+
+// Sets a global rename for the extracted keys
+RenameAll:
+	AddPrefix | AddSuffix
+;
+
+// To be used when a key's name is to be fully changed
+FullRename:
+	'rename=' name=STRING (n='N')?
+;
+
+// To be used when a key's rename is only adding a prefix
+AddPrefix:
+	'prepend=' name=STRING
+;
+
+// To be used when a key's rename is only adding a suffix
+AddSuffix:
+	'append=' name=STRING
+;
+
+// Sets the key that will be used as filter for the extraction of the top N or bottom N
+Filter:
+	'filter=' name=STRING
+;
+
+// Sets the number of keys to extract according to the filter key
+Threshold:
+	TopN | BottomN
+;
+
+// To be used when the top N values of the filter key are wanted
+TopN:
+	'top=' value=INT
+;
+
+// To be used when the bottom N values of the filter key are wanted
+BottomN:
+	'bottom=' value=INT
+;
+
+// Sets an operation to be performed on the table of extracted data
+OpType:
+	(average='average=' | sum='sum=') (all='all' | ('[' key1+=Key (',' key1+=Key)* ']')) 
+;

@@ -1,0 +1,6 @@
+extract {
+	source=cena
+	destination=cena1
+	path=cena2
+	get=[thing1 thing2]
+}

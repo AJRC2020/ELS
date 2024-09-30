@@ -1,0 +1,17 @@
+retrieve destination="results/results1.csv" {
+    extraction {
+        source="assignment_files/assignment1/decision_tree_1.yaml"
+        path="params"
+        get=["criterion" -> rename="Criterion", "splitter" -> rename="Splitter", "ccp_alpha" -> rename="CCP Alpha", "min_samples_split" -> rename="Min Samples Split"]
+    }
+    extraction {
+        source="assignment_files/assignment1/decision_tree_2.yaml"
+        path="params"
+        get=["criterion" -> rename="Criterion", "splitter" -> rename="Splitter", "ccp_alpha" -> rename="CCP Alpha", "min_samples_split" -> rename="Min Samples Split"]
+    }
+    extraction {
+        source="assignment_files/assignment1/decision_tree_3.yaml"
+        path="params"
+        get=["criterion" -> rename="Criterion", "splitter" -> rename="Splitter", "ccp_alpha" -> rename="CCP Alpha", "min_samples_split" -> rename="Min Samples Split"]
+    }
+}

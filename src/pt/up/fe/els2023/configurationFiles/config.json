@@ -1,0 +1,103 @@
+{
+  "file1": {
+    "source": "decision_tree_1.yaml",
+    "columns": [
+      {
+        "key": "tree_",
+        "name": "max_depth",
+        "rename": "Max Depth"
+      },
+      {
+        "key": "tree_",
+        "name": "node_count",
+        "rename": "Node Count"
+      }
+    ]
+  },
+  "file2": {
+    "source": "decision_tree_2.yaml",
+    "columns": [
+      {
+        "key": "params",
+        "name": "criterion",
+        "rename": "Criterion"
+      },
+      {
+        "key": "params",
+        "name": "splitter",
+        "rename": "Splitter"
+      },
+      {
+        "key": "params",
+        "name": "ccp_alpha",
+        "rename": "CPP Alpha"
+      },
+      {
+        "key": "params",
+        "name": "min_samples_split",
+        "rename": "Min Samples Split"
+      }
+    ]
+  },
+  "file3": {
+    "source": "decision_tree_3.yaml",
+    "columns": [
+      {
+        "key": "params",
+        "name": "criterion",
+        "rename": "Criterion"
+      },
+      {
+        "key": "params",
+        "name": "splitter",
+        "rename": "Splitter"
+      },
+      {
+        "key": "params",
+        "name": "ccp_alpha",
+        "rename": "CPP Alpha"
+      },
+      {
+        "key": "params",
+        "name": "min_samples_split",
+        "rename": "Min Samples Split"
+      },
+      {
+        "key": "params",
+        "name": "min_samples_split",
+        "rename": "Min Samples Split"
+      }
+    ]
+  },
+
+  "file3": {
+    "source": "decision_tree_3.yaml",
+    "columns": [
+      {
+        "key": "params",
+        "name": "criterion",
+        "rename": "Criterion"
+      },
+      {
+        "key": "params",
+        "name": "splitter",
+        "rename": "Splitter"
+      },
+      {
+        "key": "params",
+        "name": "ccp_alpha",
+        "rename": "CPP Alpha"
+      },
+      {
+        "key": "params",
+        "name": "min_samples_split",
+        "rename": "Min Samples Split"
+      },
+      {
+        "key": "params",
+        "name": "min_samples_split",
+        "rename": "Min Samples Split"
+      }
+    ]
+  }
+}

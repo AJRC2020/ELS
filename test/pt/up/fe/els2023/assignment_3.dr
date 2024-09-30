@@ -1,0 +1,26 @@
+retrieve destination="results/results3.html" folder="assignment_files/assignment3" {
+    extraction {
+        source="analysis.yaml"
+        path="total/results/dynamic"
+        append=" (Dynamic)"
+    }
+    extraction {
+        source="analysis.xml"
+        path="total/results/static"
+        append=" (Static)"
+    }
+    extraction {
+        source="profiling.json"
+        path="functions"
+        get=["time%" -> rename="% #"N, "name" -> rename="name #"N]
+        filter="time%"
+        top=3
+    }
+
+    operation {
+        sum=all
+    }
+    operation {
+        average=all
+    }
+}

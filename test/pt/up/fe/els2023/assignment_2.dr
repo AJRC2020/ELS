@@ -1,0 +1,20 @@
+retrieve destination="results/results2.html" {
+    extraction {
+        source="assignment_files/assignment2/decision_tree.yaml"
+    }
+    extraction {
+        source="assignment_files/assignment2/decision_tree.yaml"
+        path="params"
+    }
+    extraction {
+        source="assignment_files/assignment2/profiling.json"
+        path="functions"
+        get=["time%" -> rename="% #"N, "name" -> rename="name #"N]
+        filter="time%"
+        top=1
+    }
+    extraction {
+        source="assignment_files/assignment2/vitis-report.xml"
+        path="AreaEstimates/Resources"
+    }
+}

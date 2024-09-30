@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dataRetrieval" nsURI="http://www.xtext.org/example/dr/DataRetrieval"
+    nsPrefix="dataRetrieval">
+  <eClassifiers xsi:type="ecore:EClass" name="Retrieve">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dest" eType="#//Dest" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceFolder" eType="#//SourceFolder"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configList" upperBound="-1"
+        eType="#//ConfigList" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opList" upperBound="-1"
+        eType="#//OpList" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dest">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceFolder">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Source"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="path" eType="#//Path" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keysToExtract" eType="#//KeysToExtract"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="renameAll" eType="#//RenameAll"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filter" eType="#//Filter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="threshold" eType="#//Threshold"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opType" eType="#//OpType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Source">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Path">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KeysToExtract">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key1" upperBound="-1" eType="#//Key"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Key">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rename" eType="#//Rename"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rename">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RenameAll"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FullRename" eSuperTypes="#//Rename">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="n" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddPrefix" eSuperTypes="#//Rename #//RenameAll"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddSuffix" eSuperTypes="#//Rename #//RenameAll"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Filter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Threshold">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TopN" eSuperTypes="#//Threshold"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BottomN" eSuperTypes="#//Threshold"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OpType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="average" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="all" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key1" upperBound="-1" eType="#//Key"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.example.dr
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.example.dr
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.example.dr; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: org.xtext.example.dr.dataRetrieval.util,
+ org.xtext.example.dr.parser.antlr.internal,
+ org.xtext.example.dr.generator,
+ org.xtext.example.dr.dataRetrieval.impl,
+ org.xtext.example.dr.parser.antlr,
+ org.xtext.example.dr.dataRetrieval,
+ org.xtext.example.dr.scoping,
+ org.xtext.example.dr.services,
+ org.xtext.example.dr.serializer,
+ org.xtext.example.dr,
+ org.xtext.example.dr.validation
+Import-Package: org.apache.log4j

@@ -1,0 +1,12 @@
+{
+  "file4": {
+    "source": "example_files/run1/profiling.json",
+    "columns": [
+      {
+        "key": "functions",
+        "name": "",
+        "rename": ""
+      }
+    ]
+  }
+}
